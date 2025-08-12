@@ -2,12 +2,14 @@ require('dotenv').config();
 
 const express=require('express')
 const app=express()
+const cors=require('cors')
 const connectDB=require('./DB/Connection');
 const DriversRouter = require('./Routes/DriversRouter');
 const orderRouter = require('./Routes/OrdersRouter');
 const RoutesRouter = require('./Routes/RoutesRouter');
 const SimulationRouter = require('./Routes/SimulationRouter');
 connectDB()
+app.use(cors())
 
 app.use(express.json())
 app.use('/drivers',DriversRouter)

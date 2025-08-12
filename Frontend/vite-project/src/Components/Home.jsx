@@ -1,9 +1,10 @@
 import React from 'react'
+import Sidebar from './Sidebar'
 
 const Home = () => {
   return (
-    <div>
-      
+    <div className='bg-black w-screen'>
+      <Sidebar/>
     </div>
   )
 }

@@ -77,6 +77,8 @@ const kpiCalculation = (selectedDriverArray) => {
   let bonus = 0;
   let base_cost = 0;
   let order_value = 0;
+  let high_fuel_deliveries=0
+  let low_fuel_deliveries=0
   selectedDriverArray.forEach((item) => {
     item.orders.forEach((i) => {
       if (
@@ -99,14 +101,17 @@ const kpiCalculation = (selectedDriverArray) => {
       total_deliveries += 1;
       if (item.selected_routes.traffic_level === "High") {
         base_cost += item.selected_routes.distance_km * 7;
+        high_fuel_deliveries+=1
       } else {
         base_cost += item.selected_routes.distance_km * 5;
+        low_fuel_deliveries+=1
       }
     });
   });
   const profit = order_value + bonus - base_cost - penalty;
+  const lateDeliveries=total_deliveries-onTimeDeliveries
   const efficiency = (onTimeDeliveries / total_deliveries) * 100;
-  return { profit, order_value, bonus, base_cost, penalty, efficiency };
+  return { profit, order_value, bonus, base_cost, penalty, efficiency,onTimeDeliveries, lateDeliveries,high_fuel_deliveries,low_fuel_deliveries};
 };
 
 const SimulationRun = async (req, res) => {
@@ -118,7 +123,7 @@ const SimulationRun = async (req, res) => {
   orderstoDrivers(selectedDriverArray, order_array, max_hours);
   console.log(selectedDriverArray);
   const profit = kpiCalculation(selectedDriverArray);
-  res.json({ profit });
+  res.status(200).json(profit);
 };
 
 module.exports = { SimulationRun };
