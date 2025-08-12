@@ -21,7 +21,7 @@ const Simulation = () => {
     };
     try {
       const res = await axios.post(
-        "http://localhost:8000/simulation/run",
+        "https://greencart-delivery-simulation.onrender.com/simulation/run",
         payload
       );
       setProfit(res.data);
