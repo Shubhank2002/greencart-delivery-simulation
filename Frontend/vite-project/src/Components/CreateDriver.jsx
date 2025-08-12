@@ -11,7 +11,7 @@ const CreateDriver = () => {
                 ...formData,
                 shift_hours:Number(formData.shift_hours)
             }
-            const res=await axios.post('http://localhost:8000/drivers/create',payload)
+            const res=await axios.post('https://greencart-delivery-simulation.onrender.com/drivers/create',payload)
             console.log(res.data)
         } catch (error) {
             console.log(error)
