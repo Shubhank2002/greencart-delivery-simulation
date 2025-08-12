@@ -11,7 +11,7 @@ const DriversSchema=mongoose.Schema({
     },
     past_week_hours:{
         type:String,
-        default:[]
+        
     }
 },{timestamps:true})
 
