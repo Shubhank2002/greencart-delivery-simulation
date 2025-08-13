@@ -17,6 +17,7 @@ const Login = async (req, res) => {
         const token= CreateToken(email)
         res.cookie('token',token,{
             httpOnly:true,
+            secure:true,
             maxAge: 60 * 60 * 1000,
            
         })
@@ -40,10 +41,11 @@ const Signup = async (req, res) => {
         const token= CreateToken(email)
         res.cookie('token',token,{
             httpOnly:true,
+            secure:true,
             maxAge: 60 * 60 * 1000,
             
         })
-        const secret_key=process.env.JWT_SECRET
+        
         res.status(200).json({ message: "user created successfully",token,secret_key });
     }
   } catch (error) {}
