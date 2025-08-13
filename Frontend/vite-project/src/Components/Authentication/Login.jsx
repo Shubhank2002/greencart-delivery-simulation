@@ -11,6 +11,9 @@ const Login = () => {
       const res = await axios.post(
         "https://greencart-delivery-simulation.onrender.com/auth/login",form
       );
+      if(res.status==200){
+        navigate('/simulation')
+      }
     } catch (error) {}
   };
   const handleChange = (e) => {

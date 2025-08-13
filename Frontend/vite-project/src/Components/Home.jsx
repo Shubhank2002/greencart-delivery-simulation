@@ -4,7 +4,7 @@ import Login from './Authentication/Login'
 
 const Home = () => {
   return (
-    <div className='bg-black w-screen flex'>
+    <div className=' flex'>
       <Sidebar/>
       <Login/>
     </div>
