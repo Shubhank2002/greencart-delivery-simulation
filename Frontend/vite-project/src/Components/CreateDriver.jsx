@@ -12,7 +12,7 @@ const CreateDriver = () => {
                 shift_hours:Number(formData.shift_hours)
             }
             const res=await axios.post('https://greencart-delivery-simulation.onrender.com/drivers/create',payload)
-            if(res.status==201){
+            if(res.status==200){
               alert(`New Driver named ${formData.name} created successfully`)
               setformData({name:'',shift_hours:""})
             }
