@@ -26,7 +26,7 @@ const Dashboard = () => {
       <Sidebar />
       <div className="bg-white flex flex-col gap-20 w-[75vw] p-8">
         <h1 className="text-4xl font-bold">Dashboard</h1>
-        <div className="flex w-full gap-15 justify-center">
+        <div className="flex w-full gap-15 justify-center text-white">
           <div className="flex flex-col items-center border-2 rounded-lg hover:scale-115 cursor-pointer p-3 bg-[#00AC4F] w-[400px] transition-transform delay-200 duration-200 h-[200px] justify-center gap-5">
             <h1 className="font-bold text-2xl">Total Profit</h1>
             <h1>Rs {Profit.profit}</h1>
