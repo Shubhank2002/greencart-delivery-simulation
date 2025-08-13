@@ -17,7 +17,11 @@ const Login = () => {
       if(res.status==200){
         setIsAuthenticated(true)
         navigate('/simulation')
+      }else if(res.status==404){
+        setIsAuthenticated(false)
+        navigate('/signup')
       }
+
     } catch (error) {}
   };
   const handleChange = (e) => {

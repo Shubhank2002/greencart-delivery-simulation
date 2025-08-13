@@ -32,7 +32,7 @@ const Signup = async (req, res) => {
   try {
     const isExists = await UserModel.findOne({ email });
     if (isExists) {
-      res.status(400).json({ message: "user already exist, please login" });
+      res.status(404).json({ message: "user already exist, please login" });
     }else{
         const salt=await bcryptjs.genSalt(10)
         const hash_password=await bcryptjs.hash(password,salt)

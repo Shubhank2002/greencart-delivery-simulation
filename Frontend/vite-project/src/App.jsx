@@ -11,6 +11,7 @@ import CreateOrder from './Components/CreateOrder'
 import CreateRoutes from './Components/CreateRoutes'
 import { useContext } from 'react'
 import { Context } from './Context/UserContext'
+import Signup from './Components/Signup'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,11 +28,12 @@ function App() {
       <Router>
         <Routes>
           <Route index element={<Home/>}/>
-          <Route path='/dashboard' element={(isAuthenticated&&Profit)?<Dashboard/>:<Navigate to='/'/>}/>
+          <Route path='/dashboard' element={(isAuthenticated&&Profit)?<Dashboard/>:(isAuthenticated)?<Navigate to='/simulation'/>:<Navigate to='/'/>}/>
           <Route path='/simulation' element={isAuthenticated?<Simulation/>:<Navigate to='/'/>}/>
           <Route path='/drivers' element={isAuthenticated?<CreateDriver/>:<Navigate to='/'/>}/>
           <Route path='/orders' element={<CreateOrder/>}/>
           <Route path='/routes' element={<CreateRoutes/>}/>
+          <Route path='/signup' element={<Signup/>}/>
         </Routes>
       </Router>
     </>
