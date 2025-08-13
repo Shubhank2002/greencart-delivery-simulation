@@ -27,9 +27,9 @@ function App() {
       <Router>
         <Routes>
           <Route index element={<Home/>}/>
-          <Route path='/dashboard' element={isAuthenticated?<Dashboard/>:<Navigate to='/login'/>}/>
-          <Route path='/simulation' element={isAuthenticated?<Simulation/>:<Navigate to='/login'/>}/>
-          <Route path='/drivers' element={isAuthenticated?<CreateDriver/>:<Navigate to='/login'/>}/>
+          <Route path='/dashboard' element={isAuthenticated?<Dashboard/>:<Navigate to='/'/>}/>
+          <Route path='/simulation' element={isAuthenticated?<Simulation/>:<Navigate to='/'/>}/>
+          <Route path='/drivers' element={isAuthenticated?<CreateDriver/>:<Navigate to='/'/>}/>
           <Route path='/orders' element={<CreateOrder/>}/>
           <Route path='/routes' element={<CreateRoutes/>}/>
         </Routes>
