@@ -1,13 +1,15 @@
 const jwt=require('jsonwebtoken')
 
 
-const CreateToken=async(email)=>{
-    const secret_key=process.env.JWT_SECRET
+const CreateToken=(email)=>{
+    
+    
     try {
         const token= jwt.sign({email},secret_key,{expiresIn:'1h'})
+        console.log(secret_key)
         return token
     } catch (error) {
-        
+        return error
     }
 }
 module.exports={CreateToken}
