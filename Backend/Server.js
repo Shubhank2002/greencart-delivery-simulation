@@ -23,9 +23,11 @@ app.use('/routes',RoutesRouter)
 app.use('/simulation',SimulationRouter)
 app.use('/auth',AuthRouter)
 app.use(cookieParser())
+const PORT = process.env.PORT || 8000;
 
 
 
 
 
-app.listen(8000,()=>console.log('server running at 8000 port'))
+
+app.listen(PORT,()=>console.log('server running '))
