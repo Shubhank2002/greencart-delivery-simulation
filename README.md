@@ -77,6 +77,9 @@ Response:
   "token": "JWT_TOKEN"
 }
 
+Jwt token is stored inside a cookie in browser.this token has payload of email_id and the token will expire in 1hr.I have used context api for state management and axios for fetching api calls
+I have also used react-router
+
 Frontend URL: "https://greencart-delivery-simulation-12.onrender.com"
 
 Backend URL: "https://greencart-delivery-simulation.onrender.com"
