@@ -9,7 +9,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://greencart-delivery-simulation.onrender.com/auth/login",form
+        "https://greencart-delivery-simulation.onrender.com/auth/login",form,{withCredentials:true}
       );
       if(res.status==200){
         navigate('/simulation')
