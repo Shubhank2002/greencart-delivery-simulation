@@ -14,7 +14,7 @@ import { Context } from './Context/UserContext'
 
 function App() {
   const [count, setCount] = useState(0)
-  const {setIsAuthenticated,isAuthenticated}=useContext(Context)
+  const {setIsAuthenticated,isAuthenticated,Profit}=useContext(Context)
   useEffect(() => {
     const cookies = document.cookie.split(';').map(c => c.trim());
     const tokenCookie = cookies.find(c => c.startsWith('token='));
@@ -27,7 +27,7 @@ function App() {
       <Router>
         <Routes>
           <Route index element={<Home/>}/>
-          <Route path='/dashboard' element={isAuthenticated?<Dashboard/>:<Navigate to='/'/>}/>
+          <Route path='/dashboard' element={(isAuthenticated&&Profit)?<Dashboard/>:<Navigate to='/'/>}/>
           <Route path='/simulation' element={isAuthenticated?<Simulation/>:<Navigate to='/'/>}/>
           <Route path='/drivers' element={isAuthenticated?<CreateDriver/>:<Navigate to='/'/>}/>
           <Route path='/orders' element={<CreateOrder/>}/>
