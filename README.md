@@ -77,6 +77,10 @@ Response:
   "token": "JWT_TOKEN"
 }
 
+Frontend URL: "https://greencart-delivery-simulation-12.onrender.com"
+
+Backend URL: "https://greencart-delivery-simulation.onrender.com"
+
 
 
 
