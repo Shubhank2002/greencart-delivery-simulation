@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const cookieParser = require('cookie-parser');
 const express=require('express')
 const app=express()
 const cors=require('cors')
@@ -9,7 +10,6 @@ const orderRouter = require('./Routes/OrdersRouter');
 const RoutesRouter = require('./Routes/RoutesRouter');
 const SimulationRouter = require('./Routes/SimulationRouter');
 const AuthRouter = require('./Routes/AuthRouter');
-const cookieParser = require('cookie-parser');
 connectDB()
 app.use(cors({
     origin:'https://greencart-delivery-simulation-12.onrender.com',
