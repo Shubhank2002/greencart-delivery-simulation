@@ -1,9 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../Context/UserContext";
 
 const Login = () => {
   const [form, seform] = useState({ email: "", password: "" });
+  const {setIsAuthenticated,isAuthenticated}=useContext(Context)
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,6 +15,7 @@ const Login = () => {
         "https://greencart-delivery-simulation.onrender.com/auth/login",form,{withCredentials:true}
       );
       if(res.status==200){
+        setIsAuthenticated(true)
         navigate('/simulation')
       }
     } catch (error) {}

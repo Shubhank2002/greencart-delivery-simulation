@@ -19,7 +19,7 @@ function App() {
     const cookies = document.cookie.split(';').map(c => c.trim());
     const tokenCookie = cookies.find(c => c.startsWith('token='));
     setIsAuthenticated(!!tokenCookie);
-  }, [isAuthenticated]);
+  }, []);
 
 
   return (
