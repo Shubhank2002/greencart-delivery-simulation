@@ -7,9 +7,12 @@ import React from 'react'
 
 const UserContext = ({children}) => {
     const [Profit,setProfit]=useState()
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+
 
   return (
-    <Context.Provider value={{Profit,setProfit}}>
+    <Context.Provider value={{Profit,setProfit,isAuthenticated,setIsAuthenticated}}>
         {children}
     </Context.Provider>
   )
