@@ -14,6 +14,7 @@ const CreateDriver = () => {
             const res=await axios.post('https://greencart-delivery-simulation.onrender.com/drivers/create',payload)
             if(res.status==201){
               alert(`New Driver named ${formData.name} created successfully`)
+              setformData({name:'',shift_hours:""})
             }
         } catch (error) {
             console.log(error)
