@@ -20,11 +20,15 @@ const Signup = () => {
       if (res.status == 200) {
         setIsAuthenticated(true);
         navigate("/simulation");
-      } else if (res.status == 404) {
+      } 
+    } catch (error) {
+        if (error.response && error.response.status === 404) {
         setIsAuthenticated(false);
-        navigate("/signup");
+        navigate("/");
+      } else {
+        console.error("Signup error:", error);
       }
-    } catch (error) {}
+    }
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
